@@ -14,6 +14,8 @@ module Api
   
         def create
           @course = Course.new(course_params)
+          @course.state = 'active'
+
           if @course.save
             render json: @course, status: :created
           else
