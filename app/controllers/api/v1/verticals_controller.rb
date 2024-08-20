@@ -5,6 +5,7 @@
 module Api
     module V1
       class VerticalsController < ApplicationController
+        before_action :authenticate_user!
         before_action :set_vertical, only: [:show, :update, :destroy]
   
         def index

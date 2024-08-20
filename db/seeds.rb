@@ -37,3 +37,9 @@ end
 courses.each do |c|
   Course.create!(id: c['Id'], name: c['Name'], author: c['Author'], category_id: c['Categories'], state: c['State'])
 end
+
+# Create a default admin user if not exists
+User.find_or_create_by!(email: 'admin@example.com') do |user|
+  user.password = '123456'
+  user.password_confirmation = '123456'
+end

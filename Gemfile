@@ -12,11 +12,13 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 
 gem 'devise'
+gem 'devise-jwt'
 gem 'doorkeeper'
 gem 'elasticsearch'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'jwt'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg_search'
 gem 'rspec-rails', group: [:development, :test]
 gem 'factory_bot_rails', group: [:development, :test]
