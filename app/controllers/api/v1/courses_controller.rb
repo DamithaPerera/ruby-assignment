@@ -1,6 +1,7 @@
 module Api
     module V1
       class CoursesController < ApplicationController
+        before_action :authenticate_user!
         before_action :set_course, only: [:show, :update, :destroy]
   
         def index

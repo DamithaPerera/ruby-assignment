@@ -1,7 +1,3 @@
-# class Api::V1::VerticalsController < ApplicationController
-# end
-
-# app/controllers/api/v1/verticals_controller.rb
 module Api
     module V1
       class VerticalsController < ApplicationController

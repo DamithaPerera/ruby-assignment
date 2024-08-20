@@ -1,6 +1,8 @@
 module Api
   module V1
     class SearchController < ApplicationController
+      before_action :authenticate_user!
+
       def index
         query = params[:q]
         if query.present?
