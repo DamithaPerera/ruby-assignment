@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :verticals
       resources :categories
       resources :courses
+      get 'search', to: 'search#index'
     end
   end  
   devise_for :users
