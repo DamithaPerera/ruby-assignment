@@ -19,6 +19,22 @@ services:
     volumes:
       - esdata:/usr/share/elasticsearch/data
 
+  rails:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rails
+    environment:
+      - RAILS_ENV=production
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+      - "3000:3000"
+    depends_on:
+      - elasticsearch
+    volumes:
+      - .:/rails
+    command: ["./bin/rails", "server"]
+
 volumes:
   esdata:
     driver: local
